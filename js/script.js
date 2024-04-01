@@ -35,11 +35,19 @@ createApp({
     },
     methods: {
         nextSlide() {
-            this.currentIndex ++
+            if (this.currentIndex < this.slides.length -1) {
+                this.currentIndex++
+            } else {
+                this.currentIndex = 0
+            }
         },
         prevSlide() {
-            this.currentIndex --
-        }
+            if(this.currentIndex === 0) {
+                this.currentIndex = this.slides.length -1
+            } else {
+                this.currentIndex--
+            }
+        },
     }
 
 }).mount('#app')
