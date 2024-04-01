@@ -30,7 +30,16 @@ createApp({
     data() {
         return{
             slides : slides,
+            currentIndex : 0,
         }
     },
+    methods: {
+        nextSlide() {
+            this.currentIndex ++
+        },
+        prevSlide() {
+            this.currentIndex --
+        }
+    }
 
 }).mount('#app')
